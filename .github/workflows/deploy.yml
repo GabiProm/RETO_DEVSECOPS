@@ -22,8 +22,8 @@ jobs:
     - name: Instalar dependencias
       run: npm install
 
-    - name: Ejecutar aplicación
-      run: npm start
+    - name: Ejecutar aplicación en segundo plano
+      run: nohup npm start &
 
     - name: Simular despliegue
       run: echo "Despliegue simulado ✅"
