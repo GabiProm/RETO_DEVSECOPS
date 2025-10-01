@@ -6,4 +6,4 @@ router.get('/', getStatus);
 
 module.exports = router;
 
-//hola
+
