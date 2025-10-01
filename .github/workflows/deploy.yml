@@ -25,11 +25,14 @@ jobs:
     - name: Ejecutar aplicación en segundo plano
       run: nohup npm start &
 
-    - name: Simular despliegue
-      run: echo "Despliegue simulado ✅"
+    - name: Esperar que el servidor levante
+      run: sleep 5
 
-      - name: Validar respuesta del endpoint
+    - name: Validar respuesta del endpoint
       run: |
         RESPONSE=$(curl -s http://localhost:3000/api/status)
         echo "Respuesta del servidor: $RESPONSE"
         echo "$RESPONSE" | grep "error" && exit 1 || echo "✅ Sin errores detectados"
+
+    - name: Simular despliegue
+      run: echo "Despliegue simulado ✅"
