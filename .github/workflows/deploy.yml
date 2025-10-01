@@ -36,3 +36,8 @@ jobs:
 
     - name: Simular despliegue
       run: echo "Despliegue simulado ✅"
+
+    - name: Ejecutar aplicación con puerto dinámico
+      env:
+        PORT: 8080
+      run: nohup npm start &
